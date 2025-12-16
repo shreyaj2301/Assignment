@@ -940,34 +940,51 @@ html {
 }
 
 /* FAQ SECTION */
+/* ================= FAQ SECTION ================= */
 .faq-section {
   padding: 100px 60px;
   background: #f6f2eb;
 }
 
 .faq-container {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
-  gap: 60px;
   align-items: center;
+  gap: 60px;
+}
+
+/* ================= IMAGE ================= */
+.faq-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .faq-image img {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
   border-radius: 200px 200px 20px 20px;
+  object-fit: cover;
 }
 
+/* ================= CONTENT ================= */
 .faq-content {
   width: 60%;
 }
 
 .faq-content h2 {
   font-size: 34px;
+  margin-bottom: 8px;
 }
 
 .faq-subtitle {
+  font-size: 16px;
   margin-bottom: 40px;
 }
 
+/* ================= FAQ ITEMS ================= */
 .faq-item {
   border-bottom: 1px solid #ddd;
   padding: 18px 0;
@@ -976,6 +993,7 @@ html {
 .faq-item h4 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   font-size: 16px;
 }
@@ -983,13 +1001,7 @@ html {
 .faq-item p {
   margin-top: 12px;
   font-size: 15px;
-}
-
-.faq-item:not(.active) p {
-  display: none;
-}
-
-.faq-item p {
+  line-height: 1.6;
   overflow: hidden;
   transition: max-height 0.4s ease, opacity 0.3s ease;
 }
@@ -1003,9 +1015,10 @@ html {
   max-height: 300px;
   opacity: 1;
 }
-/* ================= RESPONSIVE FAQ SECTION ================= */
 
-/* Large tablets & small laptops */
+/* ================= RESPONSIVE ================= */
+
+/* Large screens */
 @media (max-width: 1200px) {
   .faq-section {
     padding: 80px 40px;
@@ -1016,7 +1029,7 @@ html {
   }
 
   .faq-image img {
-    width: 320px;
+    max-width: 320px;
   }
 }
 
@@ -1024,12 +1037,17 @@ html {
 @media (max-width: 992px) {
   .faq-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: left;
+  }
+
+  .faq-image {
+    width: 100%;
+    margin-bottom: 30px;
   }
 
   .faq-image img {
-    width: 280px;
-    margin-bottom: 30px;
+    max-width: 300px;
   }
 
   .faq-content {
@@ -1047,11 +1065,13 @@ html {
     padding: 60px 20px;
   }
 
+  .faq-image {
+    display: flex;
+    justify-content: center;
+  }
+
   .faq-image img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 30px;
-    display: block;
+    max-width: 260px;
   }
 
   .faq-content h2 {
@@ -1074,6 +1094,11 @@ html {
 
 /* Small Mobile */
 @media (max-width: 480px) {
+  .faq-image img {
+    max-width: 220px;
+    border-radius: 160px 160px 18px 18px;
+  }
+
   .faq-content h2 {
     font-size: 24px;
   }
@@ -1090,6 +1115,8 @@ html {
     font-size: 13.5px;
   }
 }
+
+
 
 /* interior Guide   */
 .interior-guide {
